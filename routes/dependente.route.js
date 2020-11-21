@@ -1,0 +1,11 @@
+const express=require('express');
+const router=express.Router();
+const dependenteController=require('../controllers/dependente.controller.js');
+router.get('/teste', dependenteController.teste);
+router.post('/criar',dependenteController.criar);
+router.get('/listar', dependenteController.listar);
+router.get('/:id', dependenteController.procurarUm);
+router.post('/:id', dependenteController.alterar);
+router.delete('/:id', dependenteController.deletar);
+router.get('/listar-dependentes/:id', dependenteController.listarDependentes);
+module.exports=router;

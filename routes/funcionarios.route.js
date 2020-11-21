@@ -1,0 +1,12 @@
+const express=require('express');
+const router=express.Router();
+const funcionarioController=require('../controllers/funcionarios.controller.js');
+router.get('/teste', funcionarioController.teste);
+router.post('/criar',funcionarioController.criar);
+router.get('/listar', funcionarioController.listar);
+router.get('/:id', funcionarioController.procurarUm);
+router.post('/:id', funcionarioController.alterar);
+router.delete('/:id', funcionarioController.deletar);
+router.post('/curtir/:id', funcionarioController.curtir);
+router.post('/descurtir/:id', funcionarioController.descurtir);
+module.exports=router;
